@@ -67,3 +67,8 @@ h2 {
   font-weight: bold;
   margin-left: 5px;
 }
+
+.building img {
+    width: 100%;
+    height: auto;
+  }
