@@ -79,3 +79,45 @@ h2 {
     height: auto;
     border-radius: 10px; /* Rounded corners */
 }
+
+/* Form container */
+#ratingForm {
+    width: 80%; /* Adjust width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form labels */
+#ratingForm label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Form inputs */
+#ratingForm select,
+#ratingForm input[type="number"],
+#ratingForm input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Submit button */
+#ratingForm input[type="submit"] {
+    background-color: #00274C;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#ratingForm input[type="submit"]:hover {
+    background-color: #001b33;
+}
