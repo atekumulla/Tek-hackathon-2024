@@ -2,7 +2,9 @@ let responses = {
     building1: { floor1: [5, 7, 6], floor2: [4, 5, 5], floor3: [6, 6, 7], floor4: [3, 4, 5] },
     building2: { floor1: [6, 7, 7], floor2: [5, 6, 6], floor3: [7, 8, 8], floor4: [4, 5, 6] },
     building3: { floor1: [4, 5, 5], floor2: [3, 4, 4], floor3: [5, 6, 6], floor4: [2, 3, 4] },
-    building4: { floor1: [7, 8, 8], floor2: [6, 7, 7], floor3: [8, 9, 9], floor4: [5, 6, 6] }
+    building4: { floor1: [7, 8, 8], floor2: [6, 7, 7], floor3: [8, 9, 9], floor4: [5, 6, 6] },
+    building5: { floor1: [7, 8, 8], floor2: [6, 7, 7], floor3: [8, 9, 9], floor4: [5, 6, 6] },
+    building6: { floor1: [7, 8, 8], floor2: [6, 7, 7], floor3: [8, 9, 9], floor4: [5, 6, 6] }
   };
 
   // Update the averages initially

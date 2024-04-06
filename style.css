@@ -125,8 +125,8 @@ h2 {
 }
 
 .logo {
-    width: 140px; /* Adjust the width as needed */
+    width: 100px; /* Adjust the width as needed */
     position: absolute;
-    top: 10px; /* Adjust the top position as needed */
-    left: 10px; /* Adjust the left position as needed */
+    top: 23px; /* Adjust the top position as needed */
+    left: 20px; /* Adjust the left position as needed */
   }

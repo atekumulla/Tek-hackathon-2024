@@ -9,14 +9,14 @@
 <body>
   <header>
     <img src="images/michigan-logo3.png" alt="Logo" class="logo"> 
-    <h1>Study Space Monitor</h1>
+    <h1>M-Study: A Study Space Monitor</h1>
   </header>
   <div class="container">
     <h2>Rate Your Study Space</h2>
     <form id="ratingForm">
         <label for="building">Building:</label>
         <select id="building" name="building">
-            <option value="building1">Ugli aka Shapiro</option>
+            <option value="building1">Shapiro</option>
             <option value="building2">Michigan Union</option>
             <option value="building3">Ross</option>
             <option value="building4">Kines</option>
@@ -41,7 +41,7 @@
     <div class="building" onclick="toggleDetails('building1')" id="building1">
         <div class="building-content">
           <div class="building-info">
-            <h3>Ugli aka Shapiro</h3>
+            <h3>Shapiro</h3>
             <div class="average-Activity-Level" id="building1Average"></div>
           </div>
           <img src="images/shapiro2.jpeg" alt="Building 1">
@@ -101,7 +101,39 @@
         <div>Floor 4 Activity Level: <span id="building4Floor4Average"></span></div>
       </div>
     </div>
-  </div>
+
+    <div class="building" onclick="toggleDetails('building5')" id="building5">
+        <div class="building-content">
+          <div class="building-info">
+            <h3>The Dude</h3>
+            <div class="average-Activity-Level" id="building5Average"></div>
+          </div>
+          <img src="images/dude.jpeg" alt="Building 5">
+        </div>
+        <div class="building-details" id="building5Details">
+          <div>Floor 1 Activity Level: <span id="building5Floor1Average"></span></div>
+          <div>Floor 2 Activity Level: <span id="building5Floor2Average"></span></div>
+          <div>Floor 3 Activity Level: <span id="building5Floor3Average"></span></div>
+          <div>Floor 4 Activity Level: <span id="building5Floor4Average"></span></div>
+        </div>
+      </div>
+
+      <div class="building" onclick="toggleDetails('building6')" id="building6">
+        <div class="building-content">
+          <div class="building-info">
+            <h3>LSA Building</h3>
+            <div class="average-Activity-Level" id="building6Average"></div>
+          </div>
+          <img src="images/lsa.jpeg" alt="Building 6">
+        </div>
+        <div class="building-details" id="building6Details">
+          <div>Floor 1 Activity Level: <span id="building6Floor1Average"></span></div>
+          <div>Floor 2 Activity Level: <span id="building6Floor2Average"></span></div>
+          <div>Floor 3 Activity Level: <span id="building6Floor3Average"></span></div>
+          <div>Floor 4 Activity Level: <span id="building6Floor4Average"></span></div>
+        </div>
+      </div>
+</div>
 
   <script src="source.js"></script>
 </body>
