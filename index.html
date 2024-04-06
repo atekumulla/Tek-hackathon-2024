@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Space Monitor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      margin-top: 30px;
+    }
+    .study-space {
+      margin-bottom: 20px;
+    }
+    .study-space label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .study-space input[type="text"] {
+      width: calc(100% - 30px);
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .study-space input[type="submit"] {
+      padding: 8px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Study Space Monitor</h1>
+  </header>
+  <div class="container">
+    <h2>Study Spaces</h2>
+    <div class="study-space">
+      <label for="space1">Study Space 1:</label>
+      <input type="text" id="space1" name="space1" placeholder="Enter busyness...">
+      <input type="submit" value="Submit">
+    </div>
+    <div class="study-space">
+      <label for="space2">Study Space 2:</label>
+      <input type="text" id="space2" name="space2" placeholder="Enter busyness...">
+      <input type="submit" value="Submit">
+    </div>
+    <div class="study-space">
+      <label for="space3">Study Space 3:</label>
+      <input type="text" id="space3" name="space3" placeholder="Enter busyness...">
+      <input type="submit" value="Submit">
+    </div>
+    <div class="study-space">
+      <label for="space4">Study Space 4:</label>
+      <input type="text" id="space4" name="space4" placeholder="Enter busyness...">
+      <input type="submit" value="Submit">
+    </div>
+  </div>
+</body>
+</html>
