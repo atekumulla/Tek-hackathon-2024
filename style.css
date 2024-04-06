@@ -123,3 +123,10 @@ h2 {
 #ratingForm input[type="submit"]:hover {
     background-color: #001b33;
 }
+
+.logo {
+    width: 140px; /* Adjust the width as needed */
+    position: absolute;
+    top: 10px; /* Adjust the top position as needed */
+    left: 10px; /* Adjust the left position as needed */
+  }
