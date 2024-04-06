@@ -20,35 +20,47 @@
       max-width: 800px;
       margin: 20px auto;
       padding: 0 20px;
+      text-align: center; /* Center the buildings */
     }
-    h2 {
-      margin-top: 30px;
-    }
-    .study-space {
-      margin-bottom: 20px;
-    }
-    .study-space label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .study-space input[type="text"] {
-      width: calc(100% - 30px);
-      padding: 8px;
+    .building {
+      width: calc(25% - 10px);
+      height: 100px;
+      background-color: #f0f0f0;
       border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .study-space input[type="submit"] {
-      padding: 8px 20px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
+      border-radius: 5px;
+      margin-bottom: 20px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
+      position: relative;
+      margin-right: 20px;
     }
-    .study-space .average-busyness {
+    .building:hover {
+      background-color: #e0e0e0;
+    }
+    .building-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    .building-details {
+      display: none;
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 0;
+      width: 150px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .building:hover .building-details {
+      display: block;
+    }
+    .average-busyness {
       font-weight: bold;
-      margin-top: 5px;
     }
   </style>
 </head>
@@ -58,61 +70,111 @@
   </header>
   <div class="container">
     <h2>Study Spaces</h2>
-    <div class="study-space" id="space1Container">
-      <label for="space1">Study Space 1:</label>
-      <input type="text" id="space1" name="space1" placeholder="Enter busyness...">
-      <input type="submit" value="Submit" onclick="recordResponse('space1')">
-      <div class="average-busyness" id="space1Average"></div>
+    <div class="building">
+      <div class="building-content">
+        <h3>Building 1</h3>
+        <div class="average-busyness" id="building1Average"></div>
+        <div class="building-details">
+          <div>Floor 1 Busyness: <span id="building1Floor1Average"></span></div>
+          <div>Floor 2 Busyness: <span id="building1Floor2Average"></span></div>
+          <div>Floor 3 Busyness: <span id="building1Floor3Average"></span></div>
+          <div>Floor 4 Busyness: <span id="building1Floor4Average"></span></div>
+        </div>
+      </div>
     </div>
-    <div class="study-space" id="space2Container">
-      <label for="space2">Study Space 2:</label>
-      <input type="text" id="space2" name="space2" placeholder="Enter busyness...">
-      <input type="submit" value="Submit" onclick="recordResponse('space2')">
-      <div class="average-busyness" id="space2Average"></div>
+    <div class="building">
+      <div class="building-content">
+        <h3>Building 2</h3>
+        <div class="average-busyness" id="building2Average"></div>
+        <div class="building-details">
+          <div>Floor 1 Busyness: <span id="building2Floor1Average"></span></div>
+          <div>Floor 2 Busyness: <span id="building2Floor2Average"></span></div>
+          <div>Floor 3 Busyness: <span id="building2Floor3Average"></span></div>
+          <div>Floor 4 Busyness: <span id="building2Floor4Average"></span></div>
+        </div>
+      </div>
     </div>
-    <div class="study-space" id="space3Container">
-      <label for="space3">Study Space 3:</label>
-      <input type="text" id="space3" name="space3" placeholder="Enter busyness...">
-      <input type="submit" value="Submit" onclick="recordResponse('space3')">
-      <div class="average-busyness" id="space3Average"></div>
+    <div class="building">
+      <div class="building-content">
+        <h3>Building 3</h3>
+        <div class="average-busyness" id="building3Average"></div>
+        <div class="building-details">
+          <div>Floor 1 Busyness: <span id="building3Floor1Average"></span></div>
+          <div>Floor 2 Busyness: <span id="building3Floor2Average"></span></div>
+          <div>Floor 3 Busyness: <span id="building3Floor3Average"></span></div>
+          <div>Floor 4 Busyness: <span id="building3Floor4Average"></span></div>
+        </div>
+      </div>
     </div>
-    <div class="study-space" id="space4Container">
-      <label for="space4">Study Space 4:</label>
-      <input type="text" id="space4" name="space4" placeholder="Enter busyness...">
-      <input type="submit" value="Submit" onclick="recordResponse('space4')">
-      <div class="average-busyness" id="space4Average"></div>
+    <div class="building">
+      <div class="building-content">
+        <h3>Building 4</h3>
+        <div class="average-busyness" id="building4Average"></div>
+        <div class="building-details">
+          <div>Floor 1 Busyness: <span id="building4Floor1Average"></span></div>
+          <div>Floor 2 Busyness: <span id="building4Floor2Average"></span></div>
+          <div>Floor 3 Busyness: <span id="building4Floor3Average"></span></div>
+          <div>Floor 4 Busyness: <span id="building4Floor4Average"></span></div>
+        </div>
+      </div>
     </div>
   </div>
 
   <script>
     let responses = {
-      space1: [],
-      space2: [],
-      space3: [],
-      space4: []
+      building1: { floor1: [5, 7, 6], floor2: [4, 5, 5], floor3: [6, 6, 7], floor4: [3, 4, 5] },
+      building2: { floor1: [6, 7, 7], floor2: [5, 6, 6], floor3: [7, 8, 8], floor4: [4, 5, 6] },
+      building3: { floor1: [4, 5, 5], floor2: [3, 4, 4], floor3: [5, 6, 6], floor4: [2, 3, 4] },
+      building4: { floor1: [7, 8, 8], floor2: [6, 7, 7], floor3: [8, 9, 9], floor4: [5, 6, 6] }
     };
 
-    function recordResponse(space) {
-      const input = document.getElementById(space);
+    // Update the averages initially
+    Object.keys(responses).forEach(building => {
+      updateAverage(building);
+    });
+
+    function recordResponse(building, floor) {
+      const input = document.getElementById(`${building}-${floor}`);
       const inputValue = parseInt(input.value);
       if (!isNaN(inputValue)) {
-        responses[space].push(inputValue);
-        updateAverage(space);
+        responses[building][floor].push(inputValue);
+        updateAverage(building);
         input.value = '';
       } else {
         alert('Please enter a valid number for busyness.');
       }
     }
 
-    function updateAverage(space) {
-      const averageContainer = document.getElementById(`${space}Average`);
-      const totalResponses = responses[space].length;
-      if (totalResponses > 0) {
-        const totalSum = responses[space].reduce((acc, val) => acc + val, 0);
-        const average = totalSum / totalResponses;
-        averageContainer.textContent = `Average Busyness: ${Math.round(average)} / 10`;
+    function updateAverage(building) {
+      const overallAverage = document.getElementById(`${building}Average`);
+      const floorAverages = {
+        floor1: document.getElementById(`${building}Floor1Average`),
+        floor2: document.getElementById(`${building}Floor2Average`),
+        floor3: document.getElementById(`${building}Floor3Average`),
+        floor4: document.getElementById(`${building}Floor4Average`)
+      };
+
+      let totalOverallResponses = 0;
+      let totalOverallSum = 0;
+
+      Object.keys(responses[building]).forEach(floor => {
+        const totalResponses = responses[building][floor].length;
+        if (totalResponses > 0) {
+          const totalSum = responses[building][floor].reduce((acc, val) => acc + val, 0);
+          const average = totalSum / totalResponses;
+          floorAverages[floor].textContent = Math.round(average);
+          totalOverallResponses += totalResponses;
+          totalOverallSum += totalSum;
+        } else {
+          floorAverages[floor].textContent = '-';
+        }
+      });
+
+      if (totalOverallResponses > 0) {
+        const overallAverageValue = totalOverallSum / totalOverallResponses;
+        overallAverage.textContent = `Overall Busyness: ${Math.round(overallAverageValue)}`;
       } else {
-        averageContainer.textContent = '';
+        overallAverage.textContent = '';
       }
     }
   </script>
