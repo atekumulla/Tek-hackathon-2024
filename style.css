@@ -3,20 +3,24 @@ body {
     margin: 0;
     padding: 0;
   }
+  
   header {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
     text-align: center;
   }
+  
   .container {
     max-width: 800px;
     margin: 20px auto;
     padding: 0 20px;
-    text-align: center; /* Center the buildings */
+    display: flex;
+    flex-direction: column; /* Change to column */
   }
+  
   .building {
-    width: calc(25% - 10px);
+    width: 100%; /* Adjust the width based on the number of buildings */
     height: 100px;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
@@ -25,11 +29,12 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     position: relative;
-    margin-right: 20px;
   }
+  
   .building:hover {
     background-color: #e0e0e0;
   }
+  
   .building-content {
     display: flex;
     flex-direction: column;
@@ -37,21 +42,25 @@ body {
     justify-content: center;
     height: 100%;
   }
+  
   .building-details {
     display: none;
     position: absolute;
-    top: calc(100% + 10px);
-    left: 0;
-    width: 150px;
+    top: 0;
+    left: calc(100% + 10px);
+    width: 150px; /* Adjust the width of the floor details */
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   }
-  .building:hover .building-details {
+  
+  .building-details.show {
     display: block;
   }
+  
   .average-busyness {
     font-weight: bold;
   }
+  
