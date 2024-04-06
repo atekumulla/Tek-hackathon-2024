@@ -47,7 +47,6 @@ h2 {
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Align items to the start and end of the header */
     background-color: #00274C;
     color: #fff;
     padding: 20px;
@@ -58,7 +57,7 @@ header {
     align-items: center; /* Align items vertically */
 }
 
-.profile-title {
+h1 {
     margin: 0 auto; /* Center align the profile title */
 }
 
