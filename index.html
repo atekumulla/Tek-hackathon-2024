@@ -14,25 +14,25 @@
     <form id="ratingForm">
         <label for="building">Building:</label>
         <select id="building" name="building">
-          <option value="building1">Ugli aka Shapiro</option>
-          <option value="building2">Michigan Union</option>
-          <option value="building3">Ross</option>
-          <option value="building4">Kines</option>
+            <option value="building1">Ugli aka Shapiro</option>
+            <option value="building2">Michigan Union</option>
+            <option value="building3">Ross</option>
+            <option value="building4">Kines</option>
         </select>
         <br>
         <label for="floor">Floor:</label>
         <select id="floor" name="floor">
-          <option value="floor1">Floor 1</option>
-          <option value="floor2">Floor 2</option>
-          <option value="floor3">Floor 3</option>
-          <option value="floor4">Floor 4</option>
+            <option value="floor1">Floor 1</option>
+            <option value="floor2">Floor 2</option>
+            <option value="floor3">Floor 3</option>
+            <option value="floor4">Floor 4</option>
         </select>
         <br>
         <label for="busyness">Busyness (1-10):</label>
         <input type="number" id="busyness" name="busyness" min="1" max="10" required>
         <br>
         <input type="submit" value="Submit">
-      </form>
+    </form>
       
 
     <h2>Study Spaces</h2>
@@ -154,27 +154,28 @@
     }
 
     document.getElementById("ratingForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const building = formData.get("building");
-    const floor = formData.get("floor");
-    const busyness = parseInt(formData.get("busyness"));
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const building = formData.get("building");
+        const floor = formData.get("floor");
+        const busyness = parseInt(formData.get("busyness"));
 
-    if (!isNaN(busyness)) {
-        if (busyness >= 1 && busyness <= 10) {
-        recordResponse(building, floor, busyness);
+        if (!isNaN(busyness)) {
+            if (busyness >= 1 && busyness <= 10) {
+                recordResponse(building, floor, busyness);
+            } else {
+                alert("Busyness rating must be between 1 and 10.");
+            }
         } else {
-        alert("Busyness rating must be between 1 and 10.");
+            alert("Please enter a valid number for busyness.");
         }
-    } else {
-        alert("Please enter a valid number for busyness.");
-    }
     });
 
     function recordResponse(building, floor, busyness) {
-    responses[building][floor].push(busyness);
-    updateAverage(building);
+        responses[building][floor].push(busyness);
+        updateAverage(building);
     }
+
 
   </script>
 </body>
