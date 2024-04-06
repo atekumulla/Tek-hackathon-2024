@@ -37,10 +37,13 @@
 
     <h2>Study Spaces</h2>
     <div class="building" onclick="toggleDetails('building1')">
-      <div class="building-content">
-        <img src="images/shapiro.jpeg" alt="Building 1">
-        <h3>Ugli aka Shapiro</h3>
-        <div class="average-busyness" id="building1Average"></div>
+        <div class="building-content">
+          <div class="building-info">
+            <h3>Ugli aka Shapiro</h3>
+            <div class="average-busyness" id="building1Average"></div>
+          </div>
+          <img src="images/shapiro.jpeg" alt="Building 1">
+        </div>
         <div class="building-details" id="building1Details">
           <div>Floor 1 Busyness: <span id="building1Floor1Average"></span></div>
           <div>Floor 2 Busyness: <span id="building1Floor2Average"></span></div>
@@ -48,50 +51,54 @@
           <div>Floor 4 Busyness: <span id="building1Floor4Average"></span></div>
         </div>
       </div>
-    </div>
 
     <div class="building" onclick="toggleDetails('building2')">
-        <div class="building-content">
-          <img src="images/union.jpeg" alt="Building 1">
+      <div class="building-content">
+        <div class="building-info">
           <h3>Michigan Union</h3>
           <div class="average-busyness" id="building2Average"></div>
-          <div class="building-details" id="building2Details">
-            <div>Floor 1 Busyness: <span id="building2Floor1Average"></span></div>
-            <div>Floor 2 Busyness: <span id="building2Floor2Average"></span></div>
-            <div>Floor 3 Busyness: <span id="building2Floor3Average"></span></div>
-            <div>Floor 4 Busyness: <span id="building2Floor4Average"></span></div>
-          </div>
         </div>
+        <img src="images/union.jpeg" alt="Building 2">
       </div>
+      <div class="building-details" id="building2Details">
+        <div>Floor 1 Busyness: <span id="building2Floor1Average"></span></div>
+        <div>Floor 2 Busyness: <span id="building2Floor2Average"></span></div>
+        <div>Floor 3 Busyness: <span id="building2Floor3Average"></span></div>
+        <div>Floor 4 Busyness: <span id="building2Floor4Average"></span></div>
+      </div>
+    </div>
 
-      <div class="building" onclick="toggleDetails('building3')">
-        <div class="building-content">
-          <img src="images/ross.jpeg" alt="Building 1">
+    <div class="building" onclick="toggleDetails('building3')">
+      <div class="building-content">
+        <div class="building-info">
           <h3>Ross</h3>
           <div class="average-busyness" id="building3Average"></div>
-          <div class="building-details" id="building3Details">
-            <div>Floor 1 Busyness: <span id="building3Floor1Average"></span></div>
-            <div>Floor 2 Busyness: <span id="building3Floor2Average"></span></div>
-            <div>Floor 3 Busyness: <span id="building3Floor3Average"></span></div>
-            <div>Floor 4 Busyness: <span id="building3Floor4Average"></span></div>
-          </div>
         </div>
+        <img src="images/ross.jpeg" alt="Building 3">
       </div>
+      <div class="building-details" id="building3Details">
+        <div>Floor 1 Busyness: <span id="building3Floor1Average"></span></div>
+        <div>Floor 2 Busyness: <span id="building3Floor2Average"></span></div>
+        <div>Floor 3 Busyness: <span id="building3Floor3Average"></span></div>
+        <div>Floor 4 Busyness: <span id="building3Floor4Average"></span></div>
+      </div>
+    </div>
 
-      <div class="building" onclick="toggleDetails('building4')">
-        <div class="building-content">
-          <img src="images/kines.jpeg" alt="Building 1">
+    <div class="building" onclick="toggleDetails('building4')">
+      <div class="building-content">
+        <div class="building-info">
           <h3>Kines</h3>
           <div class="average-busyness" id="building4Average"></div>
-          <div class="building-details" id="building4Details">
-            <div>Floor 1 Busyness: <span id="building4Floor1Average"></span></div>
-            <div>Floor 2 Busyness: <span id="building4Floor2Average"></span></div>
-            <div>Floor 3 Busyness: <span id="building4Floor3Average"></span></div>
-            <div>Floor 4 Busyness: <span id="building4Floor4Average"></span></div>
-          </div>
         </div>
+        <img src="images/kines.jpeg" alt="Building 4">
       </div>
-    <!-- Repeat the above structure for the other buildings -->
+      <div class="building-details" id="building4Details">
+        <div>Floor 1 Busyness: <span id="building4Floor1Average"></span></div>
+        <div>Floor 2 Busyness: <span id="building4Floor2Average"></span></div>
+        <div>Floor 3 Busyness: <span id="building4Floor3Average"></span></div>
+        <div>Floor 4 Busyness: <span id="building4Floor4Average"></span></div>
+      </div>
+    </div>
   </div>
 
   <script>
