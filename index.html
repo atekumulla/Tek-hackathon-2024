@@ -45,32 +45,40 @@
 
     <h2>Study Spaces</h2>
     <div class="building" onclick="toggleDetails('ugli')" id="ugli">
-        <div class="building-content">
-          <div class="building-info">
-            <h3>Ugli aka Shapiro</h3>
-            <div class="average-Activity-Level" id="ugliAverage"></div>
+      <div class="building-content">
+        <div class="building-info">
+          <h3>Ugli aka Shapiro</h3>
+          <div class="average-Activity-Level" id="ugliAverage"></div>
+        </div>
+        <img src="images/shapiro2.jpeg" alt="Ugli aka Shapiro">
+      </div>
+      
+      <!-- New outer box for building details -->
+      <div class="details-container">
+          <div class="building-details" id="ugliDetails">
+            <div>Basement Activity Level: <span id="ugliBasementAverage"></span></div>
+            <div>Floor 1 Activity Level: <span id="ugliFloor1Average"></span></div>
+            <div>Floor 2 Activity Level: <span id="ugliFloor2Average"></span></div>
+            <div>Floor 3 Activity Level: <span id="ugliFloor3Average"></span></div>
+            <div>Floor 4 Activity Level: <span id="ugliFloor4Average"></span></div>
           </div>
-          <img src="images/shapiro2.jpeg" alt="Ugli aka Shapiro">
-        </div>
-        <div class="building-details" id="ugliDetails">
-          <div>Basement Activity Level: <span id="ugliBasementAverage"></span></div>
-          <div>Floor 1 Activity Level: <span id="ugliFloor1Average"></span></div>
-          <div>Floor 2 Activity Level: <span id="ugliFloor2Average"></span></div>
-          <div>Floor 3 Activity Level: <span id="ugliFloor3Average"></span></div>
-          <div>Floor 4 Activity Level: <span id="ugliFloor4Average"></span></div>
-        </div>
-    </div>
+      </div>
+  </div>
+  
 
     <!-- Repeat the same structure for other buildings -->
     <!-- Michigan Union -->
     <div class="building" onclick="toggleDetails('union')" id="union">
-        <div class="building-content">
-          <div class="building-info">
-            <h3>Michigan Union</h3>
-            <div class="average-Activity-Level" id="unionAverage"></div>
-          </div>
-          <img src="images/union.jpeg" alt="Michigan Union">
+      <div class="building-content">
+        <div class="building-info">
+          <h3>Michigan Union</h3>
+          <div class="average-Activity-Level" id="unionAverage"></div>
         </div>
+        <img src="images/union.jpeg" alt="Michigan Union">
+      </div>
+      
+      <!-- New outer box for building details -->
+      <div class="details-container">
         <div class="building-details" id="unionDetails">
           <div>Basement Activity Level: <span id="unionBasementAverage"></span></div>
           <div>Floor 1 Activity Level: <span id="unionFloor1Average"></span></div>
@@ -78,39 +86,51 @@
           <div>Atrium Activity Level: <span id="unionAtriumAverage"></span></div>
           <div>Idea Hub Activity Level: <span id="unionIdeaHubAverage"></span></div>
         </div>
+      </div>
     </div>
+    
 
     <!-- Ross -->
     <div class="building" onclick="toggleDetails('ross')" id="ross">
-        <div class="building-content">
-          <div class="building-info">
-            <h3>Ross</h3>
-            <div class="average-Activity-Level" id="rossAverage"></div>
-          </div>
-          <img src="images/ross.jpeg" alt="Ross">
+      <div class="building-content">
+        <div class="building-info">
+          <h3>Ross</h3>
+          <div class="average-Activity-Level" id="rossAverage"></div>
         </div>
+        <img src="images/ross.jpeg" alt="Ross">
+      </div>
+      
+      <!-- New outer box for building details -->
+      <div class="details-container">
         <div class="building-details" id="rossDetails">
           <div>Winter Garden Activity Level: <span id="rossWinterGardenAverage"></span></div>
           <div>Study Rooms Activity Level: <span id="rossStudyRoomsAverage"></span></div>
           <div>Classrooms Activity Level: <span id="rossClassroomsAverage"></span></div>
         </div>
+      </div>
     </div>
+    
 
-    <!-- Kines -->
-    <div class="building" onclick="toggleDetails('kines')" id="kines">
-        <div class="building-content">
-          <div class="building-info">
-            <h3>Kines</h3>
-            <div class="average-Activity-Level" id="kinesAverage"></div>
-          </div>
-          <img src="images/kines.jpeg" alt="Kines">
-        </div>
+   <!-- Kines -->
+  <div class="building" onclick="toggleDetails('kines')" id="kines">
+    <div class="building-content">
+      <div class="building-info">
+        <h3>Kines</h3>
+        <div class="average-Activity-Level" id="kinesAverage"></div>
+      </div>
+      <img src="images/kines.jpeg" alt="Kines">
+    </div>
+    
+    <!-- New outer box for building details -->
+    <div class="details-container">
         <div class="building-details" id="kinesDetails">
           <div>Atrium Activity Level: <span id="kinesAtriumAverage"></span></div>
           <div>Study Rooms Activity Level: <span id="kinesStudyRoomsAverage"></span></div>
           <div>Classrooms Activity Level: <span id="kinesClassroomsAverage"></span></div>
         </div>
     </div>
+  </div>
+
 
   </div>
 
