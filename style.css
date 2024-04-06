@@ -6,28 +6,28 @@ body {
     padding: 0;
     background-color: #f0f0f0;
 }
-
+  
 header {
     background-color: #00274C;
     color: #fff;
     padding: 20px;
     text-align: center;
 }
-
+  
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
-
+  
 h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
-
+  
 .building {
     display: flex;
-    flex-direction: column; /* Changed to column layout */
+    flex-direction: column; /* Updated */
     background-color: #fff;
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -36,57 +36,51 @@ h2 {
     max-width: 1200px;
     width: 100%;
 }
-
+  
 .building:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
+  
 .building-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
 }
-
+  
 .building h3 {
     font-size: 20px;
     margin-top: 0;
 }
-
+  
 .average-Activity-Level {
     font-weight: bold;
     margin-bottom: 10px;
 }
-
+  
 .building-details {
     display: none;
+    padding: 10px 20px; /* Added padding */
 }
-
+  
 .building-details.show {
     display: block;
 }
-
+  
 .building-details div {
     margin-bottom: 5px;
 }
-
+  
 .building-details span {
     font-weight: bold;
     margin-left: 5px;
 }
-
+  
 .building img {
-    width: 50%; /* Modified to fit container width */
+    width: 50%;
     height: auto;
     border-radius: 10px; /* Rounded corners */
 }
-
-.details-container {
-    border: 1px solid #ddd; /* Light grey border */
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #f9f9f9; /* Light grey background */
-  }
 
 /* Form container */
 #ratingForm {

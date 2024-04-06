@@ -1,33 +1,9 @@
-let responses;
-
-// Function to load responses from Local Storage
-function loadResponses() {
-  const savedResponses = localStorage.getItem('studySpaceResponses');
-  if (savedResponses) {
-    responses = JSON.parse(savedResponses);
-  } else {
-    // Initialize responses if not found in Local Storage
-    responses = {
-      ugli: { basement: [], floor1: [], floor2: [], floor3: [], floor4: [] },
-      union: { basement: [], floor1: [], quietStudyLounge: [], atrium: [], ideaHub: [] },
-      ross: { winterGarden: [], studyRooms: [], classrooms: [] },
-      kines: { atrium: [], studyRooms: [], classrooms: [] }
-    };
-  }
-}
-
-// Function to save responses to Local Storage
-function saveResponses() {
-  localStorage.setItem('studySpaceResponses', JSON.stringify(responses));
-}
-
-// Load responses on page load
-loadResponses();
-
-// Update the averages initially
-Object.keys(responses).forEach(building => {
-  updateAverage(building);
-});
+let responses = {
+    building1: { floor1: [5, 7, 6], floor2: [4, 5, 5], floor3: [6, 6, 7], floor4: [3, 4, 5] },
+    building2: { floor1: [6, 7, 7], floor2: [5, 6, 6], floor3: [7, 8, 8], floor4: [4, 5, 6] },
+    building3: { floor1: [4, 5, 5], floor2: [3, 4, 4], floor3: [5, 6, 6], floor4: [2, 3, 4] },
+    building4: { floor1: [7, 8, 8], floor2: [6, 7, 7], floor3: [8, 9, 9], floor4: [5, 6, 6] }
+  };
 
   // Update the averages initially
   Object.keys(responses).forEach(building => {
@@ -44,7 +20,6 @@ Object.keys(responses).forEach(building => {
     } else {
       alert('Please enter a valid number for activity level.');
     }
-    saveResponses()
   }
 
   function updateAverage(building) {
@@ -104,11 +79,9 @@ Object.keys(responses).forEach(building => {
       }
   });
 
-  // Record and update response function
-function recordResponse(building, area, activityLevel) {
-    responses[building][area].push(activityLevel);
-    updateAverage(building);
-    saveResponses(); // Save responses to local storage after updating
+  function recordResponse(building, floor, activityLevel) {
+      responses[building][floor].push(activityLevel);
+      updateAverage(building);
   }
 
   function setBuildingColor(building, activityLevel) {
