@@ -130,3 +130,12 @@ h2 {
     top: 23px; /* Adjust the top position as needed */
     left: 20px; /* Adjust the left position as needed */
   }
+
+  .profile-icon {
+    position: absolute;
+    top: 30px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    width: 100px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer; /* Add cursor pointer for interaction */
+}
