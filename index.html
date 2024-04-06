@@ -36,7 +36,7 @@
       
 
     <h2>Study Spaces</h2>
-    <div class="building" onclick="toggleDetails('building1')">
+    <div class="building" onclick="toggleDetails('building1')" id="building1">
         <div class="building-content">
           <div class="building-info">
             <h3>Ugli aka Shapiro</h3>
@@ -52,7 +52,7 @@
         </div>
     </div>
 
-    <div class="building" onclick="toggleDetails('building2')">
+    <div class="building" onclick="toggleDetails('building2')" id="building2">
       <div class="building-content">
         <div class="building-info">
           <h3>Michigan Union</h3>
@@ -68,7 +68,7 @@
       </div>
     </div>
 
-    <div class="building" onclick="toggleDetails('building3')">
+    <div class="building" onclick="toggleDetails('building3')" id="building3">
       <div class="building-content">
         <div class="building-info">
           <h3>Ross</h3>
@@ -84,7 +84,7 @@
       </div>
     </div>
 
-    <div class="building" onclick="toggleDetails('building4')">
+    <div class="building" onclick="toggleDetails('building4')" id="building4">
       <div class="building-content">
         <div class="building-info">
           <h3>Kines</h3>
@@ -154,6 +154,7 @@
       if (totalOverallResponses > 0) {
         const overallAverageValue = totalOverallSum / totalOverallResponses;
         overallAverage.textContent = `Overall Activity Level: ${Math.round(overallAverageValue)}`;
+        setBuildingColor(building, overallAverageValue);
       } else {
         overallAverage.textContent = '';
       }
@@ -169,11 +170,11 @@
         const formData = new FormData(event.target);
         const building = formData.get("building");
         const floor = formData.get("floor");
-        const Activity_Level = parseInt(formData.get("Activity-Level"));
+        const activityLevel = parseInt(formData.get("Activity-Level"));
 
-        if (!isNaN(Activity-Level)) {
-            if (Activity-Level >= 1 && Activity_Level <= 10) {
-                recordResponse(building, floor, Activity_Level);
+        if (!isNaN(activityLevel)) {
+            if (activityLevel >= 1 && activityLevel <= 10) {
+                recordResponse(building, floor, activityLevel);
             } else {
                 alert("Activity level rating must be between 1 and 10.");
             }
@@ -182,11 +183,21 @@
         }
     });
 
-    function recordResponse(building, floor, Activity_Level) {
-        responses[building][floor].push(Activity_Level);
+    function recordResponse(building, floor, activityLevel) {
+        responses[building][floor].push(activityLevel);
         updateAverage(building);
     }
 
+    function setBuildingColor(building, activityLevel) {
+        const buildingElement = document.getElementById(building);
+        if (activityLevel <= 3) {
+            buildingElement.style.backgroundColor = "#DAF7A6 "; // Pale pastel green
+        } else if (activityLevel <= 7) {
+            buildingElement.style.backgroundColor = "#FFFDCE"; // Pale pastel yellow
+        } else {
+            buildingElement.style.backgroundColor = "#FFCCCB"; // Pale pastel red
+        }
+    }
 
   </script>
 </body>
