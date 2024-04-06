@@ -46,6 +46,10 @@
       border-radius: 4px;
       cursor: pointer;
     }
+    .study-space .average-busyness {
+      font-weight: bold;
+      margin-top: 5px;
+    }
   </style>
 </head>
 <body>
@@ -54,26 +58,63 @@
   </header>
   <div class="container">
     <h2>Study Spaces</h2>
-    <div class="study-space">
+    <div class="study-space" id="space1Container">
       <label for="space1">Study Space 1:</label>
       <input type="text" id="space1" name="space1" placeholder="Enter busyness...">
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit" onclick="recordResponse('space1')">
+      <div class="average-busyness" id="space1Average"></div>
     </div>
-    <div class="study-space">
+    <div class="study-space" id="space2Container">
       <label for="space2">Study Space 2:</label>
       <input type="text" id="space2" name="space2" placeholder="Enter busyness...">
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit" onclick="recordResponse('space2')">
+      <div class="average-busyness" id="space2Average"></div>
     </div>
-    <div class="study-space">
+    <div class="study-space" id="space3Container">
       <label for="space3">Study Space 3:</label>
       <input type="text" id="space3" name="space3" placeholder="Enter busyness...">
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit" onclick="recordResponse('space3')">
+      <div class="average-busyness" id="space3Average"></div>
     </div>
-    <div class="study-space">
+    <div class="study-space" id="space4Container">
       <label for="space4">Study Space 4:</label>
       <input type="text" id="space4" name="space4" placeholder="Enter busyness...">
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit" onclick="recordResponse('space4')">
+      <div class="average-busyness" id="space4Average"></div>
     </div>
   </div>
+
+  <script>
+    let responses = {
+      space1: [],
+      space2: [],
+      space3: [],
+      space4: []
+    };
+
+    function recordResponse(space) {
+      const input = document.getElementById(space);
+      const inputValue = parseInt(input.value);
+      if (!isNaN(inputValue)) {
+        responses[space].push(inputValue);
+        updateAverage(space);
+        input.value = '';
+      } else {
+        alert('Please enter a valid number for busyness.');
+      }
+    }
+
+    function updateAverage(space) {
+      const averageContainer = document.getElementById(`${space}Average`);
+      const totalResponses = responses[space].length;
+      if (totalResponses > 0) {
+        const totalSum = responses[space].reduce((acc, val) => acc + val, 0);
+        const average = totalSum / totalResponses;
+        averageContainer.textContent = `Average Busyness: ${Math.round(average)} / 10`;
+      } else {
+        averageContainer.textContent = '';
+      }
+    }
+  </script>
 </body>
 </html>
